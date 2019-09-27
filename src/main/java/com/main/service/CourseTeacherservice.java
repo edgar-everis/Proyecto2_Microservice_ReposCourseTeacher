@@ -1,29 +1,25 @@
 package com.main.service;
 
-import org.springframework.stereotype.Service;
-
-
 import com.main.model.RepoCourseTeacher;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
 public interface CourseTeacherservice {
 
-	Flux<RepoCourseTeacher> findByIdteacherAndCondition(String idteacher, String condition);
+  Mono<RepoCourseTeacher> CreateRepocourseteacher(RepoCourseTeacher repocourse);
 
-    Flux<RepoCourseTeacher> findByIdteacherAndStatus(String idteacher, String status);
+  Mono<Void> DeleteById(String id);
 
-    Flux<RepoCourseTeacher> findByIdteacher(String idteacher);
-    
-    Flux<RepoCourseTeacher> Getall();
-    
-    Mono<RepoCourseTeacher> findById(String id);
+  Mono<RepoCourseTeacher> findById(String id);
 
-    Mono<RepoCourseTeacher> CreateRepocourseteacher(RepoCourseTeacher repocourse);
+  Flux<RepoCourseTeacher> findByIdteacher(String idteacher);
 
-    Mono<RepoCourseTeacher> ModifyCourseTeacher(String id, RepoCourseTeacher repocourse);
+  Flux<RepoCourseTeacher> findByIdteacherAndCondition(String idteacher, String condition);
 
-    Mono<Void> DeleteById(String id);
+  Flux<RepoCourseTeacher> findByIdteacherAndStatus(String idteacher, String status);
+
+  Flux<RepoCourseTeacher> Getall();
+
+  Mono<RepoCourseTeacher> ModifyCourseTeacher(String id, RepoCourseTeacher repocourse);
 }

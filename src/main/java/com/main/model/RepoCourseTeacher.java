@@ -6,10 +6,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,19 +19,15 @@ import lombok.Setter;
 @Document(collection = "Reporte2")
 public class RepoCourseTeacher {
 
-	    @Id
-	    private String id;
+  @NotEmpty // condition = activo o finalizado
+  private String condition;
 
-	    @NotEmpty
-	    private String idteacher;
+  @Id private String id;
 
-	    @NotEmpty
-	    private String idcourse;
+  @NotEmpty private String idcourse;
 
-	    @NotEmpty // Status = Iniciado o no iniciado
-	    private String status;
+  @NotEmpty private String idteacher;
 
-	    @NotEmpty // condition = activo o finalizado
-	    private String condition;
-
+  @NotEmpty // Status = Iniciado o no iniciado
+  private String status;
 }
